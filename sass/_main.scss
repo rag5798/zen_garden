@@ -1,0 +1,143 @@
+@use "variables" as v;
+
+main {
+  background: v.$main-bg;
+  padding: v.$main-padding;
+  max-width: v.$max-width;
+  margin: 2rem auto;
+  box-shadow: v.$main-shadow;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+
+  // 🌸 decorative petals
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 6rem;
+    height: 6rem;
+    background-image: v.$petal-svg;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+    transform: rotate(-15deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    left: -2rem;
+    width: 5rem;
+    height: 5rem;
+    background-image: v.$petal-svg;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+    transform: rotate(25deg);
+  }
+
+  article {
+    margin-bottom: v.$article-spacing;
+    animation: fadeInSlide 1s ease both;
+    position: relative;
+    z-index: 1;
+
+    section.container {
+      margin-bottom: v.$article-spacing;
+
+      h2 {
+        font-family: v.$font-heading;
+        font-size: 2rem;
+        margin-bottom: v.$heading-margin-bottom;
+        color: v.$color-primary;
+        padding-left: v.$heading-indent;
+      }
+
+      h3 {
+        font-family: v.$font-heading;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        color: v.$color-primary-alt;
+        padding-left: v.$heading-indent;
+      }
+
+      p {
+        margin-bottom: v.$paragraph-spacing;
+      }
+
+      a {
+        color: v.$color-primary-alt;
+        text-decoration: v.$link-decoration;
+
+        &:hover {
+          color: v.$color-hover;
+        }
+      }
+
+      ul,
+      ol {
+        padding-left: 2rem;
+        margin-bottom: v.$paragraph-spacing;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 2rem;
+
+        li {
+          position: relative;
+          padding-left: 2rem;
+          margin-bottom: 0.75rem;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.4rem;
+            width: 1rem;
+            height: 1rem;
+            background-image: v.$petal-svg;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+
+      blockquote {
+        background: v.$blockquote-bg;
+        padding: v.$blockquote-padding;
+        border-left: v.$blockquote-border;
+        margin: 1.5rem 0;
+        font-style: italic;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      // ✅ ADD branch.svg below each section (unstyled)
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 180px; // increased height to fit branch fully
+        background: url("/svg/branch.svg") no-repeat center;
+        background-size: 350px auto; // bigger and clearer
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    // Optional: Remove branch after last section if needed
+    section.container:last-of-type::after {
+      display: none;
+    }
+  }
+}

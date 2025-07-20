@@ -1,0 +1,20 @@
+@import "fonts";
+
+// You can modify the theme directly, or override some of the variables
+// Overrides just need placed prior to the theme import
+// For example:
+// $color-primary: #3a0;
+// main.scss
+
+@import 'base';
+@import 'fonts';
+@import 'footer';
+@import 'header';
+@import 'main';
+@import 'nav';
+@import 'profile';
+@import 'typography';
+@import 'variables';
+@import 'petals';
+@import 'asides';
+

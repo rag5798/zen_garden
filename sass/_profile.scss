@@ -1,0 +1,32 @@
+// _profile.scss
+@use "variables" as v;
+
+.profile {
+  background: v.$profile-bg;
+  border-left: 4px solid v.$profile-border-color;
+  padding: v.$profile-padding;
+  margin-top: v.$profile-margin-top;
+  font-size: v.$profile-font-size;
+
+  h4 {
+    margin-bottom: v.$profile-heading-margin;
+    font-family: v.$font-heading;
+    color: v.$color-accent;
+  }
+
+  ul {
+    padding-left: v.$profile-ul-padding;
+  }
+
+  li {
+    margin-bottom: v.$profile-li-spacing;
+  }
+
+  a {
+    color: v.$color-text;
+
+    &:hover {
+      color: v.$color-hover;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+// _variables.scss
+
+// Colors
+$color-bg: #e6f0f7;
+$color-bg-top: #fef6fb;
+$color-text: #3e2a35;
+$color-accent: #f9cce2;
+$color-hover: #e9a6c3;
+$color-light: #ffffff;
+$color-secondary: #f9cce2;
+$color-primary: #8b5e3c;
+$color-primary-alt: #d46a6a;
+$branch-color: #8b5e3c;
+$color-white: white;
+$color-border: #e2dfe5;
+
+//svg
+$petal-svg: url("svg/flower.svg");
+$main-bg: #ffffff;
+
+// Fonts
+$font-body: 'Open Sans', sans-serif;
+$font-heading: 'Dancing Script', cursive;
+
+// Layout
+$max-width: 70rem;
+$gutter: 1rem;
+
+// Font Imports (place in _fonts.scss still)
+$font-heading: 'Dancing Script', cursive;
+$font-body: 'Open Sans', sans-serif;
+
+// Footer
+$footer-bg: #ffeef4;
+$footer-padding: 2rem;
+
+// Petal animation
+$petal-size-lg: 2rem;
+$petal-size-sm: 1.5rem;
+$petal-speed-fast: 8s;
+$petal-speed-slow: 10s;
+
+// Header
+$header-bg: #f9cce2;
+$header-padding: 4rem 1rem 2rem;
+$header-h1-size: 3rem;
+$header-h2-size: 1.5rem;
+$header-h2-weight: 400;
+
+// Link hover color
+$color-hover: #e9a6c3;
+
+// Nav
+$nav-bg: #fef6fb;
+$nav-padding: 1rem;
+$nav-border-color: #f9cce2;
+$nav-gap: 0 0.5rem;
+$nav-link-padding: 0.5rem 1rem;
+$nav-link-radius: 2rem;
+
+// Main / Article
+$main-bg: #ffffff;
+$main-padding: 2rem 1rem;
+$main-shadow: 0 0 10px rgba(139, 94, 60, 0.1);
+
+$article-spacing: 4rem;
+$heading-indent: 1.5rem;
+
+$blockquote-bg: #f9cce2;
+$blockquote-padding: 1rem;
+$blockquote-border: 5px solid $branch-color;
+
+// Profile Sidebar
+$profile-bg: #fff0f5;
+$profile-border-color: $color-accent;
+$profile-padding: 2rem 1rem;
+$profile-margin-top: 2rem;
+$profile-font-size: 0.95rem;
+
+// Profile Sidebar
+$profile-bg: #fff0f5;
+$profile-border-color: $color-accent;
+$profile-padding: 2rem 1rem;
+$profile-margin-top: 2rem;
+$profile-font-size: 0.95rem;
+
+$profile-heading-margin: 1rem;
+$profile-ul-padding: 1rem;
+$profile-li-spacing: 0.5rem;
+
+// Typography
+$heading-margin-bottom: 0.5rem;
+$body-line-height: 1.6;
+$paragraph-spacing: 1rem;
+$link-decoration: underline;
+
+// Styles
+$features-bg: #fef6fb;
+$features-padding: 1rem;
+$features-margin: 5vh 0 20vh;
+$feature-min-height: 12rem;
+$feature-inner-padding: 0.5em;
+$feature-gap: 0.5rem;
+$feature-font-size: 1.3rem;
+$feature-font-weight: 700;
+$feature-caption-size: 0.9rem;

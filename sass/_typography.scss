@@ -1,0 +1,23 @@
+// _typography.scss
+@use "variables" as v;
+
+h1, h2, h3, h4 {
+  font-family: v.$font-heading;
+  color: v.$color-accent;
+  margin-bottom: v.$heading-margin-bottom;
+}
+
+p {
+  line-height: v.$body-line-height;
+  margin-bottom: v.$paragraph-spacing;
+  color: v.$color-text;
+}
+
+a {
+  color: v.$color-accent;
+  text-decoration: v.$link-decoration;
+
+  &:hover {
+    color: v.$color-hover;
+  }
+}

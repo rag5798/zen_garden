@@ -1,0 +1,28 @@
+@use "variables" as v;
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@mixin render-petal($left, $top, $duration) {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-image: v.$petal-svg;
+  background-repeat: no-repeat;
+  top: $top;
+  left: $left;
+  animation: fall $duration linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 10;
+}

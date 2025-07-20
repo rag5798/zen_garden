@@ -1,0 +1,124 @@
+@use "variables" as v;
+@use "petals";
+
+header {
+  background: linear-gradient(to bottom, v.$header-bg, transparent);
+  text-align: center;
+  padding: v.$header-padding;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    font-size: v.$header-h1-size;
+    font-family: v.$font-heading;
+    color: black;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: v.$header-h2-size;
+    font-weight: v.$header-h2-weight;
+    color: v.$color-text;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: v.$color-text;
+    margin-bottom: 1rem;
+
+    a {
+      color: v.$color-text;
+      text-decoration: underline;
+
+      &:hover {
+        color: v.$color-hover;
+      }
+    }
+  }
+
+  .link-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: v.$color-accent;
+    color: v.$color-text;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      vertical-align: middle;
+      fill: currentColor;
+      transition: transform 0.4s ease;
+    }
+
+    &:hover {
+      background-color: v.$color-hover;
+      color: v.$color-white;
+
+      svg {
+        transform: scale(1.3) rotate(15deg);
+        fill: v.$color-white;
+      }
+    }
+  }
+
+  // Attributation: https://www.freepik.com/free-vector/blooming-cherry-tree_769644.htm#fromView=search&page=1&position=10&uuid=79474dd9-495a-4e3c-924f-b55f521992e6&query=cherry+blossom+tree
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 445px;
+    height: 133%;
+    background-image: url("/svg/tree.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.9;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    transform: scaleX(1); // left tree (normal)
+  }
+
+  &::after {
+    right: 0;
+    transform: scaleX(-1); // right tree flipped horizontally
+  }
+
+  // Keep petals on .container and h1 instead
+  .container::before {
+    @include petals.render-petal(25%, -2.5rem, 14s);
+  }
+
+  .container::after {
+    @include petals.render-petal(60%, -1.5rem, 11s);
+  }
+
+  h1::before {
+    @include petals.render-petal(40%, -2rem, 9s);
+  }
+
+  h1::after {
+    @include petals.render-petal(70%, -1rem, 13s);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .container::before,
+    .container::after,
+    h1::before,
+    h1::after {
+      animation: none !important;
+    }
+  }
+}

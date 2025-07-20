@@ -1,0 +1,7 @@
+/* _fonts.scss */
+@use "variables" as v;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@400;700&display=swap');
+
+body {
+  font-family: v.$font-body;
+}

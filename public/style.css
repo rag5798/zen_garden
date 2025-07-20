@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@400;700&display=swap");
+/* _fonts.scss */
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* _base.scss */
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: linear-gradient(to top, #fef6fb 0%, #e6f0f7 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background-color: #f9cce2;
+  color: #3e2a35;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+.skip-link:focus {
+  top: 0.5rem;
+  left: 0.5rem;
+  outline: 2px solid #e9a6c3;
+}
+
+/* _fonts.scss */
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.page-footer {
+  background-color: #ffeef4;
+  padding: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.95rem;
+  color: #3e2a35;
+  border-top: 2px solid #e2dfe5;
+  position: relative;
+  overflow: hidden;
+}
+.page-footer::before, .page-footer::after {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-image: url("svg/flower.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 1;
+}
+.page-footer::before {
+  left: 1rem;
+  transform: rotate(-20deg);
+}
+.page-footer::after {
+  right: 1rem;
+  transform: rotate(20deg);
+}
+.page-footer .container {
+  max-width: 70rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.page-footer p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.page-footer p a {
+  color: #d46a6a;
+  text-decoration: none;
+}
+.page-footer p a:hover {
+  text-decoration: underline;
+  color: #e9a6c3;
+}
+.page-footer p strong {
+  font-weight: bold;
+  color: #8b5e3c;
+}
+.page-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.page-footer ul li a {
+  color: #8b5e3c;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.page-footer ul li a svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+.page-footer ul li a.link-github:hover svg {
+  transform: scale(1.3) rotate(10deg);
+}
+.page-footer ul li a:hover {
+  color: #e9a6c3;
+  text-decoration: underline;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+header {
+  background: linear-gradient(to bottom, #f9cce2, transparent);
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+header h1 {
+  font-size: 3rem;
+  font-family: "Dancing Script", cursive;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+header h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #3e2a35;
+  margin-bottom: 1.5rem;
+}
+header p {
+  font-size: 1rem;
+  color: #3e2a35;
+  margin-bottom: 1rem;
+}
+header p a {
+  color: #3e2a35;
+  text-decoration: underline;
+}
+header p a:hover {
+  color: #e9a6c3;
+}
+header .link-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f9cce2;
+  color: #3e2a35;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+header .link-github svg {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  fill: currentColor;
+  transition: transform 0.4s ease;
+}
+header .link-github:hover {
+  background-color: #e9a6c3;
+  color: white;
+}
+header .link-github:hover svg {
+  transform: scale(1.3) rotate(15deg);
+  fill: white;
+}
+header::before, header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 445px;
+  height: 133%;
+  background-image: url("/svg/tree.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.9;
+  z-index: -1;
+  pointer-events: none;
+}
+header::before {
+  left: 0;
+  transform: scaleX(1);
+}
+header::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+header .container::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-image: url("svg/flower.svg");
+  background-repeat: no-repeat;
+  top: -2.5rem;
+  left: 25%;
+  animation: fall 14s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 10;
+}
+header .container::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-image: url("svg/flower.svg");
+  background-repeat: no-repeat;
+  top: -1.5rem;
+  left: 60%;
+  animation: fall 11s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 10;
+}
+header h1::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-image: url("svg/flower.svg");
+  background-repeat: no-repeat;
+  top: -2rem;
+  left: 40%;
+  animation: fall 9s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 10;
+}
+header h1::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-image: url("svg/flower.svg");
+  background-repeat: no-repeat;
+  top: -1rem;
+  left: 70%;
+  animation: fall 13s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 10;
+}
+@media (prefers-reduced-motion: reduce) {
+  header .container::before,
+header .container::after,
+header h1::before,
+header h1::after {
+    animation: none !important;
+  }
+}
+
+main {
+  background: #ffffff;
+  padding: 2rem 1rem;
+  max-width: 70rem;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(139, 94, 60, 0.1);
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+main::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  width: 6rem;
+  height: 6rem;
+  background-image: url("svg/flower.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+  transform: rotate(-15deg);
+}
+main::after {
+  content: "";
+  position: absolute;
+  bottom: -2rem;
+  left: -2rem;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("svg/flower.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+  transform: rotate(25deg);
+}
+main article {
+  margin-bottom: 4rem;
+  animation: fadeInSlide 1s ease both;
+  position: relative;
+  z-index: 1;
+}
+main article section.container {
+  margin-bottom: 4rem;
+}
+main article section.container h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #8b5e3c;
+  padding-left: 1.5rem;
+}
+main article section.container h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #d46a6a;
+  padding-left: 1.5rem;
+}
+main article section.container p {
+  margin-bottom: 1rem;
+}
+main article section.container a {
+  color: #d46a6a;
+  text-decoration: underline;
+}
+main article section.container a:hover {
+  color: #e9a6c3;
+}
+main article section.container ul,
+main article section.container ol {
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+main article section.container ul {
+  list-style: none;
+  padding-left: 2rem;
+}
+main article section.container ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+}
+main article section.container ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("svg/flower.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+main article section.container blockquote {
+  background: #f9cce2;
+  padding: 1rem;
+  border-left: 5px solid #8b5e3c;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+main article section.container blockquote p {
+  margin: 0;
+}
+main article section.container::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 180px;
+  background: url("/svg/branch.svg") no-repeat center;
+  background-size: 350px auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+main article section.container:last-of-type::after {
+  display: none;
+}
+
+nav {
+  background: linear-gradient(to right, #e6f0f7, white);
+  padding: 1.5rem 0;
+  border-top: 3px solid #e2dfe5;
+  border-bottom: 3px solid #e2dfe5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin: 0;
+}
+nav a {
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #3e2a35;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background-color: rgba(226, 223, 229, 0.15);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+nav a:hover, nav a:focus {
+  background-color: #f9cce2;
+  color: white;
+  box-shadow: 0 0 8px rgba(249, 204, 226, 0.4);
+}
+
+.profile {
+  background: #fff0f5;
+  border-left: 4px solid #f9cce2;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+.profile h4 {
+  margin-bottom: 1rem;
+  font-family: "Dancing Script", cursive;
+  color: #f9cce2;
+}
+.profile ul {
+  padding-left: 1rem;
+}
+.profile li {
+  margin-bottom: 0.5rem;
+}
+.profile a {
+  color: #3e2a35;
+}
+.profile a:hover {
+  color: #e9a6c3;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Dancing Script", cursive;
+  color: #f9cce2;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #3e2a35;
+}
+
+a {
+  color: #f9cce2;
+  text-decoration: underline;
+}
+a:hover {
+  color: #e9a6c3;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+aside.profile {
+  background: #fff0f5;
+  border-top: 2px solid #f9cce2;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+aside.profile .container {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+aside.profile h4 {
+  margin-bottom: 1rem;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  color: #8b5e3c;
+}
+aside.profile ul {
+  list-style: none;
+  padding: 1rem;
+}
+aside.profile ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+aside.profile ul li span:first-child {
+  font-weight: bold;
+  color: #d46a6a;
+}
+aside.profile ul li a {
+  color: #8b5e3c;
+  text-decoration: none;
+}
+aside.profile ul li a:hover {
+  text-decoration: underline;
+  color: #e9a6c3;
+}
+aside.profile a[href$=".css"] {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: bold;
+  background-color: #f9cce2;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  color: #3e2a35;
+}
+aside.profile a[href$=".css"]:hover {
+  background-color: #e9a6c3;
+}
+
+aside#styles {
+  background: #fef6fb;
+  padding: 1rem;
+  margin: 5vh 0 20vh;
+}
+aside#styles .container {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+aside#styles h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  color: #8b5e3c;
+  margin-bottom: 1rem;
+}
+aside#styles ul.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+aside#styles ul.features li {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+aside#styles ul.features li a {
+  color: #d46a6a;
+  text-decoration: none;
+}
+aside#styles ul.features li a:hover {
+  text-decoration: underline;
+  color: #e9a6c3;
+}
+aside#styles ul.features li span:last-child {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #3e2a35;
+}
+aside#styles .link-allstyles {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background: #f9cce2;
+  border-radius: 2rem;
+  color: #3e2a35;
+  text-decoration: none;
+}
+aside#styles .link-allstyles:hover {
+  background: #e9a6c3;
+}

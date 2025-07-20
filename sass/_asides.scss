@@ -1,0 +1,127 @@
+@use "variables" as v;
+
+@mixin css-download-link {
+  a[href$=".css"] {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+    background-color: v.$color-accent;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    color: v.$color-text;
+
+    &:hover {
+      background-color: v.$color-hover;
+    }
+  }
+}
+
+aside.profile {
+  background: v.$profile-bg;
+  border-top: 2px solid v.$profile-border-color;
+  padding: v.$profile-padding;
+  margin-top: v.$profile-margin-top;
+
+  .container {
+    max-width: v.$max-width;
+    margin: 0 auto;
+  }
+
+  h4 {
+    margin-bottom: v.$profile-heading-margin;
+    font-family: v.$font-heading;
+    font-size: 1.5rem;
+    color: v.$color-primary;
+  }
+
+  ul {
+    list-style: none;
+    padding: v.$profile-ul-padding;
+
+    li {
+      margin-bottom: v.$profile-li-spacing;
+      font-size: v.$profile-font-size;
+
+      span:first-child {
+        font-weight: bold;
+        color: v.$color-primary-alt;
+      }
+
+      a {
+        color: v.$color-primary;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          color: v.$color-hover;
+        }
+      }
+    }
+  }
+
+  @include css-download-link;
+}
+
+aside#styles {
+  background: v.$features-bg;
+  padding: v.$features-padding;
+  margin: v.$features-margin;
+
+  .container {
+    max-width: v.$max-width;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-family: v.$font-heading;
+    font-size: 2rem;
+    color: v.$color-primary;
+    margin-bottom: 1rem;
+  }
+
+  ul.features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: v.$feature-font-size;
+      font-weight: v.$feature-font-weight;
+
+      a {
+        color: v.$color-primary-alt;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          color: v.$color-hover;
+        }
+      }
+
+      span:last-child {
+        display: block;
+        font-size: v.$feature-caption-size;
+        font-weight: normal;
+        color: v.$color-text;
+      }
+    }
+  }
+
+  .link-allstyles {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background: v.$color-accent;
+    border-radius: 2rem;
+    color: v.$color-text;
+    text-decoration: none;
+
+    &:hover {
+      background: v.$color-hover;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use "variables" as v;
+
+nav {
+  background: linear-gradient(to right, v.$color-bg, lighten(v.$color-border, 20%));
+  padding: 1.5rem 0;
+  border-top: 3px solid v.$color-border;
+  border-bottom: 3px solid v.$color-border;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    display: inline-block;
+    font-family: v.$font-body;
+    font-weight: 600;
+    color: v.$color-text;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    background-color: rgba(v.$color-border, 0.15);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: v.$color-accent;
+      color: v.$color-white;
+      box-shadow: 0 0 8px rgba(v.$color-accent, 0.4);
+    }
+  }
+}
